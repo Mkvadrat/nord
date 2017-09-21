@@ -1,0 +1,23 @@
+/* font-family: "TimesNewRoman"; */
+@font-face {
+	font-family: "TimesNewRoman";
+	src: url("../fonts/TimesNewRoman.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* font-family: "AnastasiaScript"; */
+@font-face {
+	font-family: "anastasiascript";
+	src: url("../fonts/anastasiascript.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* font-family: "MyriadPro"; */
+@font-face {
+	font-family: "MyriadPro";
+	src: url("../fonts/MyriadPro.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
