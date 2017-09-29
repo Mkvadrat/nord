@@ -311,6 +311,10 @@
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
 
+	.line-images li {
+		width: 50%;
+	}
+
 	.main-index .header-slider .owl-dots {
 		bottom: 15px;
 	}
@@ -1236,6 +1240,13 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+
+	.line-images li {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	.header-slider .title-slider {
 	    width: 200px;
 	    margin-left: -100px;

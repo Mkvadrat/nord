@@ -32,20 +32,48 @@ Version: 1.0
 
             <div class="form">
 
-                <input type="text" id="name_full_form" placeholder="Ваше имя">
+                <input type="text" class="clear" id="name_full_form" placeholder="Ваше имя">
 
-                <input type="text" id="phone_full_form" placeholder="Ваш телефон">
+                <input type="text" class="clear" id="phone_full_form" placeholder="Ваш телефон">
 
-                <input type="text" id="email_full_form" placeholder="Ваш Email">
+                <input type="text" class="clear" id="email_full_form" placeholder="Ваш Email">
 
-                <textarea  id="comment_full_form" placeholder="Ваше сообщение"></textarea>
+                <textarea  class="clear" id="comment_full_form" placeholder="Ваше сообщение"></textarea>
 
-                <input type="submit" onclick="sendForm(); yaCounter45482307.reachGoal('footer_done'); return true;" value="Отправить">
+                <div class="i-take-block">
+                	<input id="i-take" type="checkbox">
+                	<label for="i-take">Я принимаю условия соглашения на обработку персональных</label>
+                </div>
+				
+                <input type="submit" class="agree no-active" value="Отправить">
 
             </div>
 
         </div>
-
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if($(window).load()){
+					$(".clear").val('');
+					$('#i-take').removeAttr('checked');
+					$('#i-take-form').removeAttr('checked');
+					$(".agree").replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+					$(".agree-booking").replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
+				}
+				
+				var checkbox = $("#i-take");
+				
+				checkbox.change(function(event) {
+					var checkbox = event.target;
+					if (checkbox.checked) {
+						$(".agree").replaceWith('<input type="submit" class="agree active" onclick="sendForm(); yaCounter45482307.reachGoal(\'footer_done\'); return true;" value="Отправить">');
+					}else{
+						$(".agree").replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+					}
+				});
+			});
+		</script>
+		
 		<script type="text/javascript">
 
 			//форма обратной связи
@@ -87,11 +115,14 @@ Version: 1.0
 						showConfirmButton: false
 
 					});
-
 					
+					if(data.status == 200) {
+						$('#i-take').removeAttr('checked');
+						$( ".agree" ).replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+					}
 
 					$.fancybox.close();
-
+				
 				}
 
 			  });

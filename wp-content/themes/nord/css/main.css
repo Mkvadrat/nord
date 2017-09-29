@@ -3058,3 +3058,96 @@ textarea:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 ul.mm-listview li a:hover {
 	background-color: #0969c2 !important;
 }
+
+.line-images {
+ padding-bottom: 20px;
+ overflow: hidden;
+}
+
+.line-images li {
+ float: left;
+ width: 25%;
+ padding: 10px;
+}
+
+.line-images li::before {
+	display: none;
+}
+
+.line-images li img {
+ width: 100%;
+}
+
+
+.i-take-block,
+.i-take-block-form {
+	display: block;
+	padding-bottom: 15px;
+}
+
+.i-take-block-form {
+	padding-top: 20px;
+}
+		
+.i-take-block label,
+.i-take-block-form label {
+	position: relative;
+	display: block;
+	padding: 0px 10px 0px 22px;
+	cursor: pointer;
+	color: white;
+	font-family: "MyriadPro";
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 18px;
+}
+
+.i-take-block input[type=checkbox],
+.i-take-block-form input[type=checkbox] {
+	display: none;
+}
+
+.i-take-block label:before,
+.i-take-block-form label:before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	left: 0;
+	bottom: 1px;
+	background-color: #fff;
+}
+
+.i-take-block label:after,
+.i-take-block-form label:after {
+	content: "";
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background-color: #333;
+	position: absolute;
+	left: 3px;
+	bottom: 4px;
+	opacity: 0;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-ms-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+.i-take-block input[type=checkbox]:checked + label:after,
+.i-take-block-form input[type=checkbox]:checked + label:after {
+	opacity: 1;
+}
+
+.form .no-active,
+.modal-form .no-active {
+	opacity: 0.8;
+}
+
+.form .no-active:hover,
+.modal-form .no-active:hover {
+	background-image: linear-gradient(to top, #11664d 0%, #65ff2f 100%) !important;
+}

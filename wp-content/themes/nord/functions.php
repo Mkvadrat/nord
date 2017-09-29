@@ -1450,7 +1450,7 @@ function lightBooking(){
 
 		if ($send == 'true'){
 			$alert = array(
-				'status' => 1,
+				'status' => 200,
 				'message' => 'Ваше сообщение отправлено'
 			);
 		}else{
@@ -1796,7 +1796,7 @@ function sendForm(){
 
 		if ($send == 'true'){
 			$alert = array(
-				'status' => 1,
+				'status' => 200,
 				'message' => 'Ваше сообщение отправлено'
 			);
 		}else{
@@ -2135,7 +2135,7 @@ function sendMiniForm(){
 
 		if ($send == 'true'){
 			$alert = array(
-				'status' => 1,
+				'status' => 200,
 				'message' => 'Ваше сообщение отправлено'
 			);
 		}else{
