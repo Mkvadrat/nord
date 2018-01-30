@@ -2,11 +2,7 @@
 # This file is distributed under the same license as the Themes - Twenty Seventeen package.
 msgid ""
 msgstr ""
-<<<<<<< HEAD
 "PO-Revision-Date: 2017-11-16 10:20:10+0000\n"
-=======
-"PO-Revision-Date: 2017-09-16 18:21:50+0000\n"
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,22 +19,15 @@ msgstr "Тема Twenty Seventeen оживит ваш сайт благодар�
 msgid "Twenty Seventeen"
 msgstr "Twenty Seventeen"
 
-<<<<<<< HEAD
 #: template-parts/footer/footer-widgets.php:18
 msgid "Footer"
 msgstr "Подвал"
 
-=======
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 #: functions.php:317
 msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
 msgstr "Добавить виджеты, которые появятся на боковой панели в записях блога и страницах архива."
 
-<<<<<<< HEAD
 #: functions.php:315 sidebar.php:18
-=======
-#: functions.php:315
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 msgid "Blog Sidebar"
 msgstr "Боковая панель блога"
 

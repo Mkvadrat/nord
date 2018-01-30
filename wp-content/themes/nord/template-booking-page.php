@@ -154,10 +154,7 @@ get_header();
 				if(data.status == 200) {
 					$('#i-take-form').removeAttr('checked');
 					$( ".agree-booking" ).replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
-<<<<<<< HEAD
 					dataLayer.push({'event' : 'sendLightBooking'});
-=======
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 				}
 				
 				$.fancybox.close();

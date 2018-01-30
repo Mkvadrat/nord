@@ -4,11 +4,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 /**
  * Plugin Name: NextGEN Gallery
  * Description: The most popular gallery plugin for WordPress and one of the most popular plugins of all time with over 18 million downloads.
-<<<<<<< HEAD
  * Version: 2.2.33
-=======
- * Version: 2.2.14
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
  * Author: Imagely
  * Plugin URI: https://www.imagely.com/wordpress-gallery-plugin/nextgen-gallery/
  * Author URI: https://www.imagely.com
@@ -665,11 +661,7 @@ class C_NextGEN_Bootstrap
 		define('NGG_PRODUCT_URL', path_join(str_replace("\\", '/', NGG_PLUGIN_URL), 'products'));
 		define('NGG_MODULE_URL', path_join(str_replace("\\", '/', NGG_PRODUCT_URL), 'photocrati_nextgen/modules'));
 		define('NGG_PLUGIN_STARTED_AT', microtime());
-<<<<<<< HEAD
 		define('NGG_PLUGIN_VERSION', '2.2.33');
-=======
-		define('NGG_PLUGIN_VERSION', '2.2.14');
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 
 		if (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG)
 			define('NGG_SCRIPT_VERSION', (string)mt_rand(0, mt_getrandmax()));

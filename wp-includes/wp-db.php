@@ -1233,21 +1233,15 @@ class wpdb {
 		$args = func_get_args();
 		array_shift( $args );
 
-<<<<<<< HEAD
 		// If args were passed as an array (as in vsprintf), move them up.
 		$passed_as_array = false;
 		if ( is_array( $args[0] ) && count( $args ) == 1 ) {
 			$passed_as_array = true;
-=======
-		// If args were passed as an array (as in vsprintf), move them up
-		if ( is_array( $args[0] ) && count( $args ) == 1 ) {
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 			$args = $args[0];
 		}
 
 		foreach ( $args as $arg ) {
 			if ( ! is_scalar( $arg ) && ! is_null( $arg ) ) {
-<<<<<<< HEAD
 				wp_load_translations_early();
 				_doing_it_wrong( 'wpdb::prepare', sprintf( __( 'Unsupported value type (%s).' ), gettype( $arg ) ), '4.8.2' );
 			}
@@ -1305,17 +1299,6 @@ class wpdb {
 			}
 		}
 
-=======
-				_doing_it_wrong( 'wpdb::prepare', sprintf( 'Unsupported value type (%s).', gettype( $arg ) ), '4.8.2' );
-			}
-		}
-
-		$query = str_replace( "'%s'", '%s', $query ); // in case someone mistakenly already singlequoted it
-		$query = str_replace( '"%s"', '%s', $query ); // doublequote unquoting
-		$query = preg_replace( '|(?<!%)%f|' , '%F', $query ); // Force floats to be locale unaware
-		$query = preg_replace( '|(?<!%)%s|', "'%s'", $query ); // quote the strings, avoiding escaped strings like %%s
-		$query = preg_replace( '/%(?:%|$|([^dsF]))/', '%%\\1', $query ); // escape any unescaped percents 
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 		array_walk( $args, array( $this, 'escape_by_ref' ) );
 		$query = @vsprintf( $query, $args );
 

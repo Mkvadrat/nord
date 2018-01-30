@@ -119,10 +119,7 @@ Version: 1.0
 					if(data.status == 200) {
 						$('#i-take').removeAttr('checked');
 						$( ".agree" ).replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
-<<<<<<< HEAD
 						dataLayer.push({'event' : 'footerSendMessage'});
-=======
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 					}
 
 					$.fancybox.close();

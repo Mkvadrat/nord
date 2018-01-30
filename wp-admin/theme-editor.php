@@ -165,13 +165,6 @@ if ( 'POST' === $_SERVER['REQUEST_METHOD'] ) {
 		$content = esc_textarea( $content );
 	}
 
-<<<<<<< HEAD
-=======
-	if ( isset( $_GET['updated'] ) ) : ?>
- <div id="message" class="updated notice is-dismissible"><p><?php _e( 'File edited successfully.' ) ?></p></div>
-<?php endif;
-
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 $file_description = get_file_description( $relative_file );
 $file_show = array_search( $file, array_filter( $allowed_files ) );
 $description = esc_html( $file_description );
@@ -234,7 +227,6 @@ foreach ( wp_get_themes( array( 'errors' => null ) ) as $a_stylesheet => $a_them
 if ( $theme->errors() )
 	echo '<div class="error"><p><strong>' . __( 'This theme is broken.' ) . '</strong> ' . $theme->errors()->get_error_message() . '</p></div>';
 ?>
-<<<<<<< HEAD
 <div id="templateside">
 	<h2 id="theme-files-label"><?php _e( 'Theme Files' ); ?></h2>
 	<ul role="tree" aria-labelledby="theme-files-label">
@@ -257,64 +249,6 @@ if ( $theme->errors() )
 			</ul>
 		</li>
 	</ul>
-=======
-	<div id="templateside">
-<?php
-if ( $allowed_files ) :
-	$previous_file_type = '';
-
-	foreach ( $allowed_files as $filename => $absolute_filename ) :
-		$file_type = substr( $filename, strrpos( $filename, '.' ) );
-
-		if ( $file_type !== $previous_file_type ) {
-			if ( '' !== $previous_file_type ) {
-				echo "\t</ul>\n";
-			}
-
-			switch ( $file_type ) {
-				case '.php':
-					if ( $has_templates || $theme->parent() ) :
-						echo "\t<h2>" . __( 'Templates' ) . "</h2>\n";
-						if ( $theme->parent() ) {
-							echo '<p class="howto">' . sprintf( __( 'This child theme inherits templates from a parent theme, %s.' ),
-								sprintf( '<a href="%s">%s</a>',
-									self_admin_url( 'theme-editor.php?theme=' . urlencode( $theme->get_template() ) ),
-									$theme->parent()->display( 'Name' )
-								)
-							) . "</p>\n";
-						}
-					endif;
-					break;
-				case '.css':
-					echo "\t<h2>" . _x( 'Styles', 'Theme stylesheets in theme editor' ) . "</h2>\n";
-					break;
-				default:
-					/* translators: %s: file extension */
-					echo "\t<h2>" . sprintf( __( '%s files' ), $file_type ) . "</h2>\n";
-					break;
-			}
-
-			echo "\t<ul>\n";
-		}
-
-		$file_description = esc_html( get_file_description( $filename ) );
-		if ( $filename !== basename( $absolute_filename ) || $file_description !== $filename ) {
-			$file_description .= '<br /><span class="nonessential">(' . esc_html( $filename ) . ')</span>';
-		}
-
-		if ( $absolute_filename === $file ) {
-			$file_description = '<span class="highlight">' . $file_description . '</span>';
-		}
-
-		$previous_file_type = $file_type;
-?>
-		<li><a href="theme-editor.php?file=<?php echo urlencode( $filename ) ?>&amp;theme=<?php echo urlencode( $stylesheet ) ?>"><?php echo $file_description; ?></a></li>
-<?php
-	endforeach;
-?>
-</ul>
-<?php endif; ?>
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 </div>
 
 <?php if ( $error ) :

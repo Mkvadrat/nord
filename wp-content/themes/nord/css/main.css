@@ -3156,7 +3156,6 @@ ul.mm-listview li a:hover {
 .form .no-active:hover,
 .modal-form .no-active:hover {
 	background-image: linear-gradient(to top, #11664d 0%, #65ff2f 100%) !important;
-<<<<<<< HEAD
 }
 
 /* 28.11.2017 */
@@ -3229,6 +3228,4 @@ ul.mm-listview li a:hover {
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 24px;
-=======
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 }

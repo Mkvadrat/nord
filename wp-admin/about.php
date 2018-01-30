@@ -32,7 +32,6 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 
 		<div class="changelog point-releases">
 			<h3><?php _e( 'Maintenance and Security Releases' ); ?></h3>
-<<<<<<< HEAD
 			<p>
 				<?php
 				printf(
@@ -68,15 +67,6 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 				/* translators: %s: Codex URL */
 				printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.9.1' );
 				?>
-=======
-			<p><?php printf( _n( '<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug.',
-					'<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs.', 5 ), '4.8.2', number_format_i18n( 5 ) ); ?>
-				<?php printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.8.2' ); ?>
-			</p>
-			<p><?php printf( _n( '<strong>Version %1$s</strong> addressed %2$s bug.',
-					'<strong>Version %1$s</strong> addressed %2$s bugs.', 29 ), '4.8.1', number_format_i18n( 29 ) ); ?>
-				<?php printf( __( 'For more information, see <a href="%s">the release notes</a>.' ), 'https://codex.wordpress.org/Version_4.8.1' ); ?>
->>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 			</p>
 		</div>
 
