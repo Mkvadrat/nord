@@ -1078,6 +1078,7 @@ function wp_just_in_time_script_localization() {
 	wp_localize_script( 'mce-view', 'mceViewL10n', array(
 		'shortcodes' => ! empty( $GLOBALS['shortcode_tags'] ) ? array_keys( $GLOBALS['shortcode_tags'] ) : array()
 	) );
+<<<<<<< HEAD
 
 	wp_localize_script( 'word-count', 'wordCountL10n', array(
 		/*
@@ -1088,6 +1089,8 @@ function wp_just_in_time_script_localization() {
 		'type' => _x( 'words', 'Word count type. Do not translate!' ),
 		'shortcodes' => ! empty( $GLOBALS['shortcode_tags'] ) ? array_keys( $GLOBALS['shortcode_tags'] ) : array()
 	) );
+=======
+>>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 }
 
 /**

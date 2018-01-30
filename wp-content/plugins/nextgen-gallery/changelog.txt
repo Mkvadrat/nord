@@ -1,6 +1,7 @@
 NextGEN Gallery
 by Imagely
 
+<<<<<<< HEAD
 = V2.2.33 - 12.24.2017
 * Fixed:   Certain image attributes were not being validated correctly
 
@@ -19,6 +20,11 @@ by Imagely
 = V2.2.14 - 09.18.2017 =
 * NEW:     EXIF and IPTC metadata are copied to new images when generating thumbnails, watermarks, or new sizes
 * Fixed:   Metadata is read and preserved when "Resized images after upload" feature is enabled
+=======
+= V2.2.14 - 09.18.2017 =
+* NEW:   EXIF and IPTC metadata are copied to new images when generating thumbnails, watermarks, or new sizes
+* Fixed: Metadata is read and preserved when "Resized images after upload" feature is enabled
+>>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 
 = V2.2.12 - 08.01.2017 =
 * Secured: Disabled Flash backend in plupload

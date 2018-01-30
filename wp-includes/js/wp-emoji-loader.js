@@ -69,7 +69,17 @@
 					[ 55356, 56826, 8203, 55356, 56819 ]
 				);
 
+<<<<<<< HEAD
 				if ( isIdentical ) {
+=======
+				context.clearRect( 0, 0, canvas.width, canvas.height );
+
+				// Add a zero width space between the characters, to force rendering as characters.
+				context.fillText( stringFromCharCode( 55356, 56826, 8203, 55356, 56819 ), 0, 0 );
+				flag2 = canvas.toDataURL();
+
+				if ( flag === flag2 ) {
+>>>>>>> 8f38895535113ed39967969bba66e9b21669bf18
 					return false;
 				}
 
