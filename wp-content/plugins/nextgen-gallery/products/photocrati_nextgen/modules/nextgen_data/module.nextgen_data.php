@@ -50,6 +50,7 @@ class M_NextGen_Data extends C_Base_Module
     function get_type_list()
     {
         return array(
+            'C_Exif_Writer_Wrapper' => 'class.exif_writer_wrapper.php',
             'A_Attachment_Datamapper' => 'adapter.attachment_datamapper.php',
             'A_Customtable_Sorting_Datamapper' => 'adapter.customtable_sorting_datamapper.php',
             'A_Nextgen_Data_Factory' => 'adapter.nextgen_data_factory.php',
@@ -121,7 +122,7 @@ class M_NextGen_Data extends C_Base_Module
 			$retval = preg_replace( '@<(script|style)[^>]*?>.*?</\\1>@si', '', $retval );
 			$retval= preg_replace('/[\r\n\t ]+/', ' ', $retval);
 		}
-		$retval = preg_replace("/\\son[^\\s=]+=/", '', $retval);
+		$retval = preg_replace("/(\\s)?on[^\\s=]+=/", '', $retval);
 
 		return $retval;
 	}

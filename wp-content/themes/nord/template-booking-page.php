@@ -46,7 +46,7 @@ get_header();
 			
 			<div id="booking-form-online">
 <!--				<p><img style="width: 100%;" src="--><?php //echo esc_url( get_template_directory_uri() ); ?><!--/images/booking.jpg" alt=""></p>-->
-                <p id="tl-anchor">С помощью приведенной ниже формы вы можете забронировать наши номера в режиме онлайн и получить гарантированную бронь. Для оплаты вы можете использовать кредитную карту, электронные деньги, безналичный расчет либо <b>оплатить заказ на месте.</b></p>
+                <p id="tl-anchor">&nbsp;&nbsp;&nbsp;&nbsp;С помощью приведенной ниже формы вы можете забронировать наши номера в режиме онлайн и получить гарантированную бронь. Для оплаты вы можете использовать кредитную карту, электронные деньги, безналичный расчет либо <b>оплатить заказ на месте.</b></p>
                 <!-- start booking form 2.0 -->
                 <div id="tl-booking-form"></div>
 			</div>	
@@ -69,14 +69,19 @@ get_header();
         <div class="easy-reservation" id="easy-reservation">
             <div class="modal-form">
                 <p class="tittle-modal-form">Легкое бронирование offline</p>
-                <input type="text" class="reset" id="name_light_booking" placeholder="Имя*">
-                <input type="email" class="reset" id="email_light_booking" placeholder="E-mail: *">
-                <input type="tel" class="reset phone-mask" id="phone_light_booking" placeholder="Телефон: *">
-                <input type="text" id="arrival_light_booking" class="reset datepicker" placeholder="Дата заезда *">
-                <input type="text" id="departure_light_booking" class="reset datepicker" placeholder="Дата выезда *">
+                <input type="text" class="reset clear" id="name_light_booking" placeholder="Имя*">
+                <input type="email" class="reset clear" id="email_light_booking" placeholder="E-mail: *">
+                <input type="tel" class="reset clear phone-mask" id="phone_light_booking" placeholder="Телефон: *">
+                <input type="text" class="reset clear" id="arrival_light_booking" placeholder="Дата заезда *">
+                <input type="text" class="reset clear" id="departure_light_booking" placeholder="Дата выезда *">
                 <p>Поля отмеченные * обязательны.</p>
+                <div class="i-take-block-form">
+                	<input id="i-take-form" type="checkbox" name="i-take">
+                	<label for="i-take-form">Я принимаю условия соглашения на обработку персональных</label>
+                </div>
                 <button onclick="clearFields();">Очистить</button>
-                <input type="submit" onclick="lightBooking(); yaCounter45482307.reachGoal('light_done'); return true;" value="Отправить">
+				
+                <input type="submit" class="agree-booking no-active" value="Отправить">
             </div>
         </div>
     </div>
@@ -109,6 +114,21 @@ get_header();
 	</script>
 	
 	<script type="text/javascript">
+		$(document).ready(function() {
+			var checkbox_booking = $("#i-take-form");
+			
+			checkbox_booking.change(function(event) {
+				var checkbox_booking = event.target;
+				if (checkbox_booking.checked) {
+					$( ".agree-booking" ).replaceWith('<input type="submit" class="agree-booking active" onclick="lightBooking(); yaCounter45482307.reachGoal(\'light_done\'); return true;" value="Отправить">');
+				}else{
+					$( ".agree-booking" ).replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
+				}
+			});
+		});
+	</script>
+		
+	<script type="text/javascript">
 		//форма обратной связи
 		function lightBooking() {
 		  var data = {
@@ -131,46 +151,30 @@ get_header();
 					showConfirmButton: false
 				});
 				
+				if(data.status == 200) {
+					$('#i-take-form').removeAttr('checked');
+					$( ".agree-booking" ).replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
+					dataLayer.push({'event' : 'sendLightBooking'});
+				}
+				
 				$.fancybox.close();
 			}
 		  });
+
 		};
 		
 		function clearFields(){
 			$('.reset').val('');
+			$('#i-take-form').removeAttr('checked');
+			$( ".agree-booking" ).replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
 		}
 		
-	</script>
-	
-	<script type="text/javascript">
-		//локализация календаря
-		$.datepicker.regional['ru'] = {
-			closeText: 'Закрыть',
-			prevText: '&#x3c;Пред',
-			nextText: 'След&#x3e;',
-			currentText: 'Сегодня',
-			monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-			monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн', 'Июл','Авг','Сен','Окт','Ноя','Дек'],
-			dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-			dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-			dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-			dateFormat: 'dd.mm.yy',
-			firstDay: 1,
-			isRTL: false
-		};
-
-		$.datepicker.setDefaults($.datepicker.regional['ru']);
-
-		$('.datepicker').datepicker({
-			dateFormat: 'dd.mm.yy',
-			minDate:0,
-		});
 	</script>
 	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".phone-mask").mask("+7(999) 999-9999");
 		});
-	 </script>
+	</script>
 	
 <?php get_footer(); ?>

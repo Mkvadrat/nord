@@ -32,20 +32,48 @@ Version: 1.0
 
             <div class="form">
 
-                <input type="text" id="name_full_form" placeholder="Ваше имя">
+                <input type="text" class="clear" id="name_full_form" placeholder="Ваше имя">
 
-                <input type="text" id="phone_full_form" placeholder="Ваш телефон">
+                <input type="text" class="clear" id="phone_full_form" placeholder="Ваш телефон">
 
-                <input type="text" id="email_full_form" placeholder="Ваш Email">
+                <input type="text" class="clear" id="email_full_form" placeholder="Ваш Email">
 
-                <textarea  id="comment_full_form" placeholder="Ваше сообщение"></textarea>
+                <textarea  class="clear" id="comment_full_form" placeholder="Ваше сообщение"></textarea>
 
-                <input type="submit" onclick="sendForm(); yaCounter45482307.reachGoal('footer_done'); return true;" value="Отправить">
+                <div class="i-take-block">
+                	<input id="i-take" type="checkbox">
+                	<label for="i-take">Я принимаю условия соглашения на обработку персональных</label>
+                </div>
+				
+                <input type="submit" class="agree no-active" value="Отправить">
 
             </div>
 
         </div>
-
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				if($(window).load()){
+					$(".clear").val('');
+					$('#i-take').removeAttr('checked');
+					$('#i-take-form').removeAttr('checked');
+					$(".agree").replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+					$(".agree-booking").replaceWith('<input type="submit" class="agree-booking no-active" value="Отправить">');
+				}
+				
+				var checkbox = $("#i-take");
+				
+				checkbox.change(function(event) {
+					var checkbox = event.target;
+					if (checkbox.checked) {
+						$(".agree").replaceWith('<input type="submit" class="agree active" onclick="sendForm(); yaCounter45482307.reachGoal(\'footer_done\'); return true;" value="Отправить">');
+					}else{
+						$(".agree").replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+					}
+				});
+			});
+		</script>
+		
 		<script type="text/javascript">
 
 			//форма обратной связи
@@ -87,15 +115,19 @@ Version: 1.0
 						showConfirmButton: false
 
 					});
-
 					
+					if(data.status == 200) {
+						$('#i-take').removeAttr('checked');
+						$( ".agree" ).replaceWith('<input type="submit" class="agree no-active" value="Отправить">');
+						dataLayer.push({'event' : 'footerSendMessage'});
+					}
 
 					$.fancybox.close();
-
+				
 				}
 
 			  });
-
+			  
 			};
 
 		</script>
@@ -133,11 +165,28 @@ Version: 1.0
 
 	    </ul>
 
+		<div class="contacts-block">
+	    	<dl>
+	    		<dt>E-mail:</dt>
+	    		<dd><a href="mailto:reserv@hotelnord.ru">reserv@hotelnord.ru</a></dd>
+	    		<dt>E-mail:</dt>
+	    		<dd><a href="mailto:market@hotelnord.ru">market@hotelnord.ru</a></dd>
+	    	</dl>
+	    	<dl>
+	    		<dt>Телефоны:</dt>
+	    		<dd><a href="tel:+73656021455">+7 (36560) 214-55</a><a href="tel:+73656021462">+7 (36560) 214-62 (факс)</a><a href="tel:+79788052591">+7 (978) 805-25-91 (моб.)</a><a href="tel:+79788052591">+7 (978) 805 25 91 (Viber)</a></dd>
+	    	</dl>
+	    	<dl>
+	    		<dt>Адрес:</dt>
+	    		<dd><address>пгт. Партенит, г. Алушта, ул. Партенитская, 1-Б, Республика Крым, Россия, 298542</address></dd>
+	    	</dl>
+	    </div>
 
+		<p class="map-cite"><a href="/karta-sayta/">Карта сайта</a></p>
 
         <p class="make-in"><a href="http://mkvadrat.com/">сайт разработан в <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/m2-logo.jpg" alt=""></a></p>
 
-        <p class="tm">Торговая марка NORD © 2017 все права защищены</p>
+        <p class="tm">NORD © 2017 все права защищены</p>
 
         <p class="tm-mobile"><span>Торговая марка NORD</span>© 2017 все права защищены</p>
 

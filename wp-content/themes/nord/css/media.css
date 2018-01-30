@@ -240,6 +240,11 @@
 
 @media only screen and (max-width :1060px) {
 
+	.footer-block .contacts-block dl {
+		width: 100%;
+		padding-bottom: 20px;
+	}
+
 	.galery-2 {
 		width: 750px;
 		margin: 0 auto;
@@ -310,6 +315,10 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+
+	.line-images li {
+		width: 50%;
+	}
 
 	.main-index .header-slider .owl-dots {
 		bottom: 15px;
@@ -405,7 +414,7 @@
 
 	.tm-mobile {
 		display: inline-block;
-		padding-top: 38px;
+		padding-top: 30px;
 		padding-bottom: 50px;
 		padding-left: 70px;
 		color: white;
@@ -1044,6 +1053,19 @@
 
 @media only screen and (max-width : 639px) {
 
+	.footer-block .map-cite {
+		margin-bottom: 0;
+	}
+
+	.footer-block .contacts-block dl:nth-child(3) {
+		padding-bottom: 0;
+	}
+
+	.footer-block .contacts-block dl {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	.mobile-block .owl-nav,
 	.offers .owl-nav,
 	.our-rooms .list-rooms .owl-theme .owl-nav {
@@ -1063,7 +1085,7 @@
 	}
 
 	.footer-block {
-		padding-top: 70px;
+		padding-top: 90px;
 	}
 
 	.footer-block .make-in {
@@ -1236,6 +1258,13 @@
 
 /* Extra Small Devices, Phones */
 @media only screen and (max-width : 480px) {
+
+	.line-images li {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 	.header-slider .title-slider {
 	    width: 200px;
 	    margin-left: -100px;

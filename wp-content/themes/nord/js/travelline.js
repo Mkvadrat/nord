@@ -16,24 +16,33 @@
             default:
                 return;
         }
-        window.yaCounter45482307.hit('/' + data.step);
+		console.log('bookingStepChanged');
+		dataLayer.push({'event' : 'travelline:bookingStepChanged'});
+        if(window.yaCounter45482307)
+			window.yaCounter45482307.hit('/' + data.step);
     }
 
     function bookingSuccess(data) {
-        window.yaCounter45482307.reachGoal('Bron_Travelline', {
-            'order_id': data.bookingNumber,
-            'order_price': data.price,
-            'currency': data.currency
-        });
+		console.log('bookingSuccess');
+		dataLayer.push({'event' : 'travelline:bookingSuccess'});
+        if(window.yaCounter45482307)
+			window.yaCounter45482307.reachGoal('Bron_Travelline', {
+				'order_id': data.bookingNumber,
+				'order_price': data.price,
+				'currency': data.currency
+			});
     }
 
     function noAvailableRooms(data) {
-        window.yaCounter45482307.reachGoal('Booked_Up', {
-            'now': data.now,
-            'arriaval': data.arrivalDate,
-            'departure': data.departureDate,
-            'guests': data.guests
-        });
+		console.log('noAvailableRooms');
+		dataLayer.push({'event' : 'travelline:noAvailableRooms'});		
+        if(window.yaCounter45482307)
+			window.yaCounter45482307.reachGoal('Booked_Up', {
+				'now': data.now,
+				'arriaval': data.arrivalDate,
+				'departure': data.departureDate,
+				'guests': data.guests
+			});
     }
     (function(w){
         var q=[
